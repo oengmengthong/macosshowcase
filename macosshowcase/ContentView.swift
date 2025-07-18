@@ -13,28 +13,41 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack(spacing: 30) {
+            Image(systemName: "swift")
+                .font(.system(size: 80))
+                .foregroundColor(.orange)
+            
+            Text("macOS SwiftUI Showcase")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
+            Text("A comprehensive demonstration of SwiftUI components and features for macOS development")
+                .font(.title3)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+                .padding(.horizontal)
+            
+            VStack(spacing: 15) {
+                Label("9 Complete Demo Categories", systemImage: "rectangle.3.group")
+                Label("100+ UI Components", systemImage: "slider.horizontal.3")
+                Label("SwiftData Integration", systemImage: "cylinder")
+                Label("macOS-Specific Features", systemImage: "macwindow")
+                Label("Real Working Examples", systemImage: "play.circle")
             }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+            .font(.headline)
+            .foregroundColor(.blue)
+            
+            Text("Use this app as a reference for building modern macOS applications with SwiftUI")
+                .font(.callout)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+                .padding(.horizontal, 40)
+            
+            Spacer()
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func addItem() {

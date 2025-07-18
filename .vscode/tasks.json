@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build and Run macOS Showcase",
+			"type": "shell",
+			"command": "xcodebuild -project macosshowcase.xcodeproj -scheme macosshowcase -configuration Debug build",
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$xcodebuild"
+			]
+		}
+	]
+}

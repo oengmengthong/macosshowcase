@@ -13,6 +13,7 @@ struct macosshowcaseApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            DemoItem.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +26,7 @@ struct macosshowcaseApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DemoNavigationView()
         }
         .modelContainer(sharedModelContainer)
     }
