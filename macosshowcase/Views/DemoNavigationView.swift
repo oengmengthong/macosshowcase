@@ -17,6 +17,10 @@ enum DemoCategory: String, CaseIterable, Identifiable {
     case dataState = "Data & State"
     case systemIntegration = "System Integration"
     case advanced = "Advanced Features"
+    case videoPlayer = "VideoPlayer"
+    case charts = "Charts & Visualization"
+    case animations = "Advanced Animations"
+    case gestures = "Gesture Recognizers"
     
     var id: String { rawValue }
     
@@ -31,6 +35,10 @@ enum DemoCategory: String, CaseIterable, Identifiable {
         case .dataState: return "cylinder"
         case .systemIntegration: return "gear"
         case .advanced: return "star"
+        case .videoPlayer: return "play.rectangle"
+        case .charts: return "chart.bar"
+        case .animations: return "wand.and.stars"
+        case .gestures: return "hand.draw"
         }
     }
 }
@@ -78,6 +86,14 @@ struct DemoNavigationView: View {
             SystemIntegrationDemoView()
         case .advanced:
             AdvancedFeaturesDemoView()
+        case .videoPlayer:
+            VideoPlayerDemoView()
+        case .charts:
+            ChartsVisualizationDemoView()
+        case .animations:
+            AdvancedAnimationsDemoView()
+        case .gestures:
+            GestureRecognizersDemoView()
         }
     }
 }
